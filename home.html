@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            
+            background-image: url('recipe1.jpg');
+            background-color: white;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+    
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            
+        }
+          
+
+        nav ul li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+        }
+
+        nav ul li a:hover {
+            background-color: grey;
+            border-radius: 5px;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: whitesmoke;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: whitesmoke;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-item {
+            position: relative;
+        }
+
+        .dropdown-item:hover .dropdown-nested {
+            display: block;
+        }
+
+        .dropdown-nested {
+            display: none;
+            position: absolute;
+            background-color: whitesmoke;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            left: 100%;
+            top: 0;
+        }
+
+        .dropdown-nested a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-nested a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .container {
+            padding: 20px;
+            margin: 20px;
+        }
+
+        section {
+            padding: 20px;
+            margin: 20px;
+            text-align: center;
+        }
+
+        footer {
+            color: black;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        @media (max-width: 768px) {
+            nav ul {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                display: block;
+                margin-bottom: 10px;
+            }
+
+            .dropdown-content {
+                position: static;
+                box-shadow: none;
+            }
+
+            .dropdown-nested {
+                position: static;
+                box-shadow: none;
+            }
+
+            header, section, footer {
+                padding: 10px;
+            }
+
+            section {
+                margin: 10px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+
+            nav ul li {
+                margin-right: 0;
+            }
+
+            nav ul li a {
+                padding: 8px 10px;
+            }
+
+            section {
+                padding: 10px;
+                margin: 5px 0;
+            }
+
+            footer {
+                position: static;
+                padding: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Our Restaurant</h1>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li class="dropdown">
+                    <a href="#meals" class="dropbtn">Meals</a>
+                    <div class="dropdown-content">
+                        <div class="dropdown-item">
+                            <a href=#appetizers>Appetizers</a>
+                            <div class="dropdown-nested">
+                                <a href="appetizers.html">Open</a>
+                            </div>
+                        </div>
+                        <div class="dropdown-item">
+                            <a href=#maincourse>Main Courses</a>
+                            <div class="dropdown-nested">
+                                <a href="maincourse.html">Open</a>
+                            </div>
+                        </div>
+                        <div class="dropdown-item">
+                            <a href=#desserts>Desserts</a>
+                            <div class="dropdown-nested">
+                                <a href="desserts.html">Open</a>
+                            </div>
+                        </div>
+                        <div class="dropdown-item">
+                            <a href=#drinks>Drinks</a>
+                            <div class="dropdown-nested">
+                                <a href="drinks.html">Open</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header> 
+
+    <section id="home">
+        <div class="container">
+            <h2>Welcome to Our Restaurant</h2>
+            <p>Enjoy the best dining experience with us.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Restaurant Menu. All rights reserved.</p>
+    </footer>
+</body>
+</html>

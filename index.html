@@ -1,0 +1,132 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign Up Page</title>
+<style>
+  body {
+     background-image: url('cheesecake.jpg');
+    font-family: Arial, sans-serif;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .navbar {
+    position:fixed;
+    top: 10px;
+    right: 10px;
+  }
+  .navbar a {
+    margin-left: 10px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 3px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  .navbar a:hover {
+    background-color: #0056b3;
+    color: #fff;
+  }
+  .signup-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    width: 300px;
+  }
+  .form-group {
+    margin-bottom: 15px;
+  }
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  .form-group input {
+    width: 100%;
+    padding: 8px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+  }
+  .form-group button {
+    width: 100%;
+    padding: 8px;
+    border-radius: 3px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+  }
+  .form-group button:hover {
+    background-color: #0056b3;
+  }
+
+  .popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    z-index: 1000;
+  }
+</style>
+</head>
+<body>
+<div class="navbar">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</div>
+<div class="signup-container">
+  <h2>Sign Up</h2>
+  <form id="signup-form">
+    <div class="form-group">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+    </div>
+    <div class="form-group">
+      <button type="submit">Sign Up</button>
+    </div>
+  </form>
+</div>
+
+ 
+<div class="popup" id="popupMessage">
+  <p>Registration successful!</p>
+</div>
+
+<script>
+  const form = document.getElementById('signup-form');
+  const popup = document.getElementById('popupMessage');
+
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    popup.style.display = 'block';
+    setTimeout(() => {
+      popup.style.display = 'none';
+      window.location.href = 'login.html';  
+    }, 3000); 
+    form.reset();
+  });
+</script>
+</body>
+</html>
